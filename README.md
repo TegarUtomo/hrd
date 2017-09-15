@@ -47,3 +47,5 @@ CONSTRAINT id_pk PRIMARY KEY (id)
 ### Petunjuk menjalankan aplikasi
 * clean and build projet
 * Run
+* Servicepath = /rest/*
+* bisa dilihat di kelas OrangService
