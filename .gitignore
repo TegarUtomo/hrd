@@ -1,0 +1,5 @@
+/target/
+/bin
+.project
+.idea/libraries/Maven__org_codehaus_groovy_groovy_1_8_6.xml
+.idea/
