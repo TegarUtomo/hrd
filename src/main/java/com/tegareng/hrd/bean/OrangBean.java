@@ -6,6 +6,8 @@
 
 package com.tegareng.hrd.bean;
 
+import com.tegareng.hrd.beanLocal.MailerBeanLocal;
+import com.tegareng.hrd.beanLocal.OrangBeanLocal;
 import com.tegareng.hrd.entity.Orang;
 import com.tegareng.hrd.facade.OrangFacadeLocal;
 import com.tegareng.hrd.model.OrangModel;
@@ -24,6 +26,8 @@ public class OrangBean implements OrangBeanLocal {
    
     @EJB
     private OrangFacadeLocal orangFacade;
+	@EJB
+	private MailerBeanLocal mailerBeanLocal;
     
     @Override
     public List<OrangModel> getList() throws Exception {
@@ -59,6 +63,10 @@ public class OrangBean implements OrangBeanLocal {
             orangFacade.create(entity);
             response.setResponseCode(200);
             response.setMessage("Success");
+			
+			//email notif
+			mailerBeanLocal.sendMail("omoturaget3@gmail.com", constructEmailMessage(model));
+			
             return response;
         }catch(Exception e){
             response.setMessage("Failed");
@@ -96,7 +104,20 @@ public class OrangBean implements OrangBeanLocal {
             return response;
         }
     }
-
+	
+	private String constructEmailMessage(OrangModel model){
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("Dear Bapak/Ibu ");
+		sb.append(model.getNama()).append("<br/><br/>");
+		sb.append("Data anda Sudah terdaftar kedalam sistem HRD Java Buatan Mochamad Tegar Utomo");
+		sb.append("<br/><br/>");
+		sb.append("Regards,");
+		sb.append("<br/><br/>");
+		sb.append("HRD Admin");
+		
+		return sb.toString();
+	}
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
 }

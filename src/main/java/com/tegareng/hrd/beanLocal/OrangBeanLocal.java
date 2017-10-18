@@ -4,9 +4,8 @@
  * and open the template in the editor.
  */
 
-package com.tegareng.hrd.bean;
+package com.tegareng.hrd.beanLocal;
 
-import com.tegareng.hrd.entity.Orang;
 import com.tegareng.hrd.model.OrangModel;
 import com.tegareng.hrd.model.ResponseModel;
 import java.util.List;

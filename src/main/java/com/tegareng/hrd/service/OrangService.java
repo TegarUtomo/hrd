@@ -6,7 +6,7 @@
 
 package com.tegareng.hrd.service;
 
-import com.tegareng.hrd.bean.OrangBeanLocal;
+import com.tegareng.hrd.beanLocal.OrangBeanLocal;
 import com.tegareng.hrd.model.OrangModel;
 import com.tegareng.hrd.model.ResponseModel;
 import java.util.List;
