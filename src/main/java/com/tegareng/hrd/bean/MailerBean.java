@@ -42,7 +42,6 @@ public class MailerBean implements MailerBeanLocal{
 		BodyPart bodyPart = new MimeBodyPart();
 		
 		//if html, ex in message there are a <> html tag, use below
-		// yeah
 		bodyPart.setContent(bodyMessage, "text/html");
 		mp.addBodyPart(bodyPart);
 		
